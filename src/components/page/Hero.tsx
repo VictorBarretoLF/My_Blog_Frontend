@@ -5,7 +5,7 @@ export default function Hero() {
                 <h1>Hi, my name is</h1>
             </div>
             <div>
-                <h2 className="big-heading">Brittany Chiang.</h2>
+                <h2 className="big-heading">Victor Barreto</h2>
             </div>
             <div>
                 <h3 className="big-heading">I build things for the web.</h3>
