@@ -8,7 +8,7 @@ export default function Hero() {
                 <h2 className="big-heading">Victor Barreto</h2>
             </div>
             <div>
-                <h3 className="big-heading">I am building a pipeline.</h3>
+                <h3 className="big-heading">I am building a pipeline 2, testing script.</h3>
             </div>
             <div>
                 <p>
