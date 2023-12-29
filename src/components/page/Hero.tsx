@@ -11,15 +11,7 @@ export default function Hero() {
                 <h3 className="big-heading">I am building a pipeline 2, testing script.</h3>
             </div>
             <div>
-                <p>
-                    I’m a software engineer specializing in building (and occasionally designing)
-                    exceptional digital experiences. Currently, I’m focused on building accessible,
-                    human-centered products at{" "}
-                    <a href="https://upstatement.com/" target="_blank" rel="noreferrer">
-                        Upstatement
-                    </a>
-                    .
-                </p>
+                <h1>Te amo meu Amor!!!</h1>
             </div>
         </section>
     );
