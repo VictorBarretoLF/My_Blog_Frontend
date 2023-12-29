@@ -1,24 +1,41 @@
+"use client";
+
 import Link from "next/link";
 import MobileMenu from "./MobileMenu";
+import { useEffect, useState } from "react";
+
+const data = [
+    {
+        title: "Sobre",
+        href: "/sobre",
+    },
+    {
+        title: "Projetos",
+        href: "/projetos",
+    },
+    {
+        title: "Blog",
+        href: "/blog",
+    },
+];
 
 export default function Navbar() {
-    const data = [
-        {
-            title: "Sobre",
-            href: "/sobre",
-        },
-        {
-            title: "Projetos",
-            href: "/projetos",
-        },
-        {
-            title: "Blog",
-            href: "/blog",
-        },
-    ];
+    const [scrolledToTop, setScrolledToTop] = useState(true);
+
+    const handleScroll = () => {
+        setScrolledToTop(window.scrollY < 50);
+    };
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
 
     return (
-        <header className="w-full flex justify-between items-center text-sm fixed top-0 h-24 px-12 border-b border-zinc-800">
+        <header className="w-full flex justify-between items-center text-sm fixed top-0 h-24 px-7 md:px-10 lg:px-12 border-b border-zinc-800 filter-none pointer-events-auto select-none backdrop-blur">
             <div>
                 <Link href="/">B</Link>
             </div>
