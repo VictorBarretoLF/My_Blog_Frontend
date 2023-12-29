@@ -3,6 +3,7 @@
 import Link from "next/link";
 import MobileMenu from "./MobileMenu";
 import { useEffect, useState } from "react";
+import useScrollDirection from "@/hooks/useScrollDirection";
 
 const data = [
     {
@@ -21,6 +22,9 @@ const data = [
 
 export default function Navbar() {
     const [scrolledToTop, setScrolledToTop] = useState(true);
+    const scrollDirection = useScrollDirection("down");
+
+    console.log(scrollDirection);
 
     const handleScroll = () => {
         setScrolledToTop(window.scrollY < 50);
@@ -35,7 +39,12 @@ export default function Navbar() {
     }, []);
 
     return (
-        <header className="w-full flex justify-between items-center text-sm fixed top-0 h-24 px-7 md:px-10 lg:px-12 border-b border-zinc-800 filter-none pointer-events-auto select-none backdrop-blur">
+        <header
+            className={`w-full flex justify-between items-center text-sm fixed top-0 h-24 px-7 md:px-10 lg:px-12 border-b border-zinc-800 filter-none pointer-events-auto select-none backdrop-blur transition duration-[250ms] ease-[cubic-bezier(0.645,0.045,0.355,1)]
+            ${scrollDirection === "up" && !scrolledToTop ? "header-up-scroll" : ""} ${
+                scrollDirection === "down" && !scrolledToTop ? "header-down-scroll" : ""
+            }`}
+        >
             <div>
                 <Link href="/">B</Link>
             </div>
