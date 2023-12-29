@@ -6,3 +6,17 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; /* For Firefox */
 }
+
+@media (prefers-reduced-motion: no-preference) {
+    .header-up-scroll {
+        height: 70px;
+        transform: translateY(0px);
+        box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+    }
+
+    .header-down-scroll {
+        height: 70px;
+        transform: translateY(calc(70px * -1));
+        box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+    }
+}
